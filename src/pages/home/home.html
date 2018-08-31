@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      Todo List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+      <button ion-button small (click)="addModal()" icon-start color="danger">ADD</button>
+    <ul class="name" style="list-style:none;">
+      <li *ngFor="let name of name">
+        <ion-item item-start>
+          <h2><b>{{name.name | uppercase}}</b></h2>
+          <p>{{name.content}}</p>
+          <button ion-button small (click)="updateModal(name.id)" color="secondary" icon-only item-end>Update</button>
+          <button ion-button small (click)="delete(name.id)" color="danger" icon-only item-end>Edit</button>
+        </ion-item>
+      </li>
+    </ul>
+  </ion-list>
+</ion-content>
